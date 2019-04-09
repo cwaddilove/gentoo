@@ -1,5 +1,6 @@
-## Notice: 21-02-2017 ##
-## Repo is currently not maintained. I have not been using Gentoo Linux for 3-4 years, and can not find the time to keep up with python changes. Thanks to all who participated. ##
+## Forked from soehest repo (unmaintained as of 2017) to be compatible with an up to date system primarily for my own use, but feel free to experiment ##
+
+I found that many of the ebuilds from soehest overlay merely required some updates to be functional again, and I prefer to use ebuilds over building from source when I can.
 
 
 # Experimental Gentoo Linux Ebuilds #
@@ -46,12 +47,3 @@ I take no responsibility if usage of these ebuilds makes your computer burn, cra
 
 As mentioned sabnzbd has been forked and quite some changes have been made. I decided to fork it as the sunrise overlay seemed to be stalled/unmaintained. ~~After this fork the original maintainer came to life and has agreed to maintain his build so hopefully it will go live into portage soon.~~
 Frankly I do not see this happening anytime soon. As feedback is not overwhelming I am currently not considering adding this to portage.
-
-**Help**
-As I am not running a x86 system, I need someone to try the different ebuilds, and report back to me if they are working on x86. I need this to add the ~x86 keyword to the ebuilds.
-
-**Contact Info**
-
-**[http://eth0.dk](http://eth0.dk/)**
-
-**soehest**
