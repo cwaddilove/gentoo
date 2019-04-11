@@ -2,14 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
-
-PYTHON_DEPEND="2:2.6"
-PYTHON_USE_WITH="sqlite"
+EAPI="5"
+PYTHON_COMPAT=( python2_7 )
+PYTHON_REQ_USE="sqlite(+)"
 
 EGIT_REPO_URI="https://github.com/rembo10/headphones.git"
 
-inherit eutils user git-2 python
+inherit eutils user git-2 python-single-r1
 
 DESCRIPTION="Automatic music downloader for SABnzbd"
 HOMEPAGE="https://github.com/rembo10/headphones#readme"
@@ -20,10 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 pkg_setup() {
-	# Control PYTHON_USE_WITH
-	python_set_active_version 2
-	python_pkg_setup
-
+        # Control PYTHON_USE_WITH
+        python-single-r1_pkg_setup
 	# Create headphones group
 	enewgroup ${PN}
 	# Create headphones user, put in headphones group
@@ -58,6 +55,9 @@ src_install() {
 
 	insinto /usr/share/${PN}
 	doins -r data headphones lib Headphones.py version.txt
+	
+        # Optimization of Python module byte-complation
+        python_optimize "${D}"usr/share/${PN}
 }
 
 pkg_postinst() {
@@ -71,8 +71,6 @@ pkg_postinst() {
 	   rm -Rf "/usr/share/${PN}/.git"
 	fi
 
-	python_mod_optimize /usr/share/${PN}
-
 	elog "Headphones has been installed with data directories in /var/${PN}"
 	elog
 	elog "New user/group ${PN}/${PN} has been created"
@@ -85,8 +83,4 @@ pkg_postinst() {
 	elog "Visit http://<host ip>:8181 to configure Headphones"
 	elog "Default web username/password : headphones/secret"
 	elog
-}
-
-pkg_postrm() {
-	python_mod_cleanup /usr/share/${PN}
 }
