@@ -80,7 +80,7 @@ pkg_postinst() {
 	elog "Please configure /etc/conf.d/${PN} before starting as daemon!"
 	elog
 	elog "Start with ${ROOT}etc/init.d/${PN} start"
-	elog "Visit http://<host ip>:8181 to configure Headphones"
+	elog "Visit http://<host ip>:8083 to configure Headphones"
 	elog "Default web username/password : headphones/secret"
 	elog
 }
