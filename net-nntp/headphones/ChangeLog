@@ -2,6 +2,10 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Apr 2019; Chris Waddilove
+  headphones-9999.ebuild, -Changelog:
+  Converted Python eclass to python-single-r1
+
   10 Nov 2014; Daniel Rune Jensen (soehest) <drunejensen@gmail.com>
   headphones-9999.ebuild:
   Small fix to allow installation. Thanks to Fenix4k for reporting.
