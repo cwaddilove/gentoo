@@ -74,7 +74,7 @@ pkg_postinst() {
         elog "Please configure /etc/conf.d/${PN} before starting as daemon!"
         elog
         elog "Start with ${ROOT}etc/init.d/${PN} start"
-        elog "Visit http://<host ip>:5050 to configure Couchpotato"
+        elog "Visit http://<host ip>:8082 to configure Couchpotato"
         elog "Default web username/password : couchpotato/secret"
         elog
 }
